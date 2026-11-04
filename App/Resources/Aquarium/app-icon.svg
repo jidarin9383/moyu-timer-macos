@@ -1,0 +1,336 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="100%" height="100%" fill="none">
+  <!--
+    摸了个鱼 (Moyu Clock) - macOS Master App Icon
+    Direction A: "Aquarium Horizon Dial" (水族生境时钟)
+    Standard 1024x1024 canvas, 824x824 squircle body, optical center ~ (512, 508)
+  -->
+  <defs>
+    <!-- macOS Native Multi-tier Ambient & Key Drop Shadows -->
+    <filter id="macAppDropShadow" x="-15%" y="-10%" width="130%" height="140%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="32" stdDeviation="34" flood-color="#052621" flood-opacity="0.16" />
+      <feDropShadow dx="0" dy="12" stdDeviation="15" flood-color="#021c17" flood-opacity="0.10" />
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#01120f" flood-opacity="0.06" />
+    </filter>
+
+    <!-- Dial Plate Inner Subtle Depth -->
+    <filter id="dialInnerDepth" x="-20%" y="-20%" width="140%" height="140%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="10" stdDeviation="16" flood-color="#042F2C" flood-opacity="0.16" />
+    </filter>
+
+    <!-- Clock Hands Shadow -->
+    <filter id="handShadow" x="-30%" y="-30%" width="160%" height="160%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#032621" flood-opacity="0.28" />
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#021714" flood-opacity="0.16" />
+    </filter>
+
+    <!-- Fish Depth & Aquatic Contact Shadow -->
+    <filter id="fishContactShadow" x="-20%" y="-20%" width="140%" height="140%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="22" stdDeviation="24" flood-color="#073a33" flood-opacity="0.25" />
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#03201c" flood-opacity="0.14" />
+    </filter>
+
+    <!-- Apple Standard Continuous Curvature Squircle Path -->
+    <clipPath id="squircleClip">
+      <path d="M 100, 324 C 100, 201 195, 100 324, 100 L 700, 100 C 829, 100 924, 201 924, 324 L 924, 700 C 924, 829 829, 924 700, 924 L 324, 924 C 195, 924 100, 829 100, 700 Z" />
+    </clipPath>
+
+    <!-- Background Porcelain / Aqua Gradients -->
+    <linearGradient id="porcelainBg" x1="512" y1="100" x2="512" y2="924" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#F7FCFA" />
+      <stop offset="28%" stop-color="#EFF8F5" />
+      <stop offset="70%" stop-color="#DDF2EC" />
+      <stop offset="100%" stop-color="#C2ECE3" />
+    </linearGradient>
+
+    <!-- Water Depth & Ambient Caustic Gradients -->
+    <linearGradient id="waterDepthGrad" x1="512" y1="580" x2="512" y2="924" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#9DE6D9" stop-opacity="0.12" />
+      <stop offset="45%" stop-color="#6BD5C3" stop-opacity="0.32" />
+      <stop offset="100%" stop-color="#38B8A3" stop-opacity="0.60" />
+    </linearGradient>
+
+    <linearGradient id="waterWaveGrad" x1="512" y1="710" x2="512" y2="924" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#55C9B7" stop-opacity="0.18" />
+      <stop offset="100%" stop-color="#289F8D" stop-opacity="0.50" />
+    </linearGradient>
+
+    <!-- Top Surface Light Sheen -->
+    <linearGradient id="surfaceLightGrad" x1="512" y1="100" x2="512" y2="440" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.75" />
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.18" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.0" />
+    </linearGradient>
+
+    <!-- Clock Dial Gradients -->
+    <radialGradient id="dialPlateGrad" cx="50%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.65" />
+      <stop offset="60%" stop-color="#F0FAF7" stop-opacity="0.40" />
+      <stop offset="85%" stop-color="#DCF5EE" stop-opacity="0.30" />
+      <stop offset="100%" stop-color="#B2E7DC" stop-opacity="0.45" />
+    </radialGradient>
+
+    <linearGradient id="dialBezelGrad" x1="512" y1="140" x2="512" y2="780" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.9" />
+      <stop offset="35%" stop-color="#99E8DC" stop-opacity="0.5" />
+      <stop offset="80%" stop-color="#2DD4BF" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#0F766E" stop-opacity="0.55" />
+    </linearGradient>
+
+    <!-- Tracked Time Progress Arc Gradient -->
+    <linearGradient id="timeArcGlow" x1="512" y1="160" x2="810" y2="440" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#2DD4BF" />
+      <stop offset="60%" stop-color="#14B8A6" />
+      <stop offset="100%" stop-color="#0D9488" />
+    </linearGradient>
+
+    <!-- Clock Hands Gradients -->
+    <linearGradient id="handBodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F4C43" />
+      <stop offset="100%" stop-color="#072B26" />
+    </linearGradient>
+
+    <linearGradient id="handInlayGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#DDF5F0" />
+    </linearGradient>
+
+    <!-- Center Arbor Jewel -->
+    <radialGradient id="arborJewelGrad" cx="38%" cy="38%" r="62%">
+      <stop offset="0%" stop-color="#FED7AA" />
+      <stop offset="45%" stop-color="#FB923C" />
+      <stop offset="100%" stop-color="#C2410C" />
+    </radialGradient>
+
+    <!-- Squircle Native Inner Bezel / Border Highlight -->
+    <linearGradient id="innerBezelGrad" x1="512" y1="100" x2="512" y2="924" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.95" />
+      <stop offset="30%" stop-color="#FFFFFF" stop-opacity="0.45" />
+      <stop offset="75%" stop-color="#9EE2D5" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#50BBA8" stop-opacity="0.75" />
+    </linearGradient>
+
+    <!-- Fish Body & Anatomy Gradients -->
+    <linearGradient id="fishBodyGrad" x1="230" y1="380" x2="640" y2="620" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFA244" />
+      <stop offset="28%" stop-color="#FB923C" />
+      <stop offset="72%" stop-color="#EA580C" />
+      <stop offset="100%" stop-color="#C2410C" />
+    </linearGradient>
+
+    <linearGradient id="fishBellyGrad" x1="260" y1="550" x2="530" y2="640" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFF5E6" stop-opacity="0.98" />
+      <stop offset="100%" stop-color="#FED7AA" stop-opacity="0.92" />
+    </linearGradient>
+
+    <linearGradient id="fishTailGrad" x1="580" y1="480" x2="860" y2="520" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFA959" stop-opacity="0.95" />
+      <stop offset="60%" stop-color="#F97316" stop-opacity="0.90" />
+      <stop offset="100%" stop-color="#C2410C" stop-opacity="0.85" />
+    </linearGradient>
+
+    <linearGradient id="fishDorsalGrad" x1="380" y1="310" x2="540" y2="380" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFBA7A" stop-opacity="0.92" />
+      <stop offset="100%" stop-color="#EA580C" stop-opacity="0.92" />
+    </linearGradient>
+
+    <linearGradient id="fishPelvicGrad" x1="410" y1="630" x2="520" y2="700" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFA45F" stop-opacity="0.92" />
+      <stop offset="100%" stop-color="#EA580C" stop-opacity="0.92" />
+    </linearGradient>
+
+    <linearGradient id="fishPectoralGrad" x1="340" y1="530" x2="450" y2="660" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFD4A2" />
+      <stop offset="48%" stop-color="#FFA858" />
+      <stop offset="100%" stop-color="#EA580C" />
+    </linearGradient>
+
+    <!-- Bubble Radial Gradient -->
+    <radialGradient id="bubbleGrad" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.95" />
+      <stop offset="40%" stop-color="#E2F7F4" stop-opacity="0.75" />
+      <stop offset="80%" stop-color="#7BE3D4" stop-opacity="0.40" />
+      <stop offset="100%" stop-color="#2DD4BF" stop-opacity="0.85" />
+    </radialGradient>
+  </defs>
+
+  <!-- 1. Squircle Housing with macOS Shadow -->
+  <path d="M 100, 324 C 100, 201 195, 100 324, 100 L 700, 100 C 829, 100 924, 201 924, 324 L 924, 700 C 924, 829 829, 924 700, 924 L 324, 924 C 195, 924 100, 829 100, 700 Z"
+        fill="url(#porcelainBg)"
+        filter="url(#macAppDropShadow)" />
+
+  <!-- 2. Interior Elements Clipped to Squircle -->
+  <g clip-path="url(#squircleClip)">
+    <!-- Atmospheric Water Caustic & Floor Depth -->
+    <path d="M 100, 640 C 260, 615 440, 695 620, 645 C 760, 605 850, 635 924, 615 L 924, 924 L 100, 924 Z"
+          fill="url(#waterDepthGrad)" />
+    <path d="M 100, 730 C 310, 695 490, 770 690, 725 C 810, 700 880, 730 924, 715 L 924, 924 L 100, 924 Z"
+          fill="url(#waterWaveGrad)" />
+
+    <!-- Top Surface Light Sheen -->
+    <path d="M 100, 100 L 924, 100 L 924, 430 C 700, 360 324, 360 100, 430 Z"
+          fill="url(#surfaceLightGrad)" />
+
+    <!-- 3. Integrated Circular Clock Dial in the Aquarium Scene -->
+    <g id="aquariumClockDial">
+      <!-- Sunken Dial Face Plate with Soft Depth Shadow -->
+      <circle cx="512" cy="460" r="316" fill="url(#dialPlateGrad)" filter="url(#dialInnerDepth)" />
+
+      <!-- Outer Dial Precision Bezel -->
+      <circle cx="512" cy="460" r="316" fill="none" stroke="url(#dialBezelGrad)" stroke-width="4.5" />
+
+      <!-- Chronometer Minute Chapter Ring (Sparse ticks & dots) -->
+      <circle cx="512" cy="460" r="286" fill="none" stroke="#0F766E" stroke-opacity="0.25" stroke-width="2" stroke-dasharray="2 10" />
+
+      <!-- Luminous Time Tracking Activity Arc (12:00 to 2:40, 80 degrees) -->
+      <path d="M 512 164 A 296 296 0 0 1 803 408"
+            fill="none"
+            stroke="url(#timeArcGlow)"
+            stroke-width="8"
+            stroke-linecap="round"
+            stroke-opacity="0.9" />
+
+      <!-- Primary Cardinal Hour Ticks (12, 3, 6, 9) -->
+      <!-- 12 o'clock Major Anchor (Double Pill Marker) -->
+      <g id="cardinal12">
+        <rect x="500" y="170" width="8" height="34" rx="4" fill="#0E4B43" />
+        <rect x="516" y="170" width="8" height="34" rx="4" fill="#0E4B43" />
+        <circle cx="512" cy="152" r="3.5" fill="#2DD4BF" />
+      </g>
+      <!-- 3 o'clock Marker -->
+      <rect x="782" y="454" width="32" height="12" rx="6" fill="#0E4B43" />
+      <!-- 6 o'clock Marker (Softened by depth) -->
+      <rect x="506" y="734" width="12" height="32" rx="6" fill="#0E4B43" opacity="0.75" />
+      <!-- 9 o'clock Marker -->
+      <rect x="210" y="454" width="32" height="12" rx="6" fill="#0E4B43" />
+
+      <!-- Sparse Secondary Hour Pips (r=6) at 1, 2, 4, 5, 7, 8, 10, 11 -->
+      <circle cx="655" cy="212" r="6" fill="#0E4B43" opacity="0.8" />
+      <circle cx="760" cy="317" r="6" fill="#0E4B43" opacity="0.8" />
+      <circle cx="760" cy="603" r="6" fill="#0E4B43" opacity="0.65" />
+      <circle cx="655" cy="708" r="6" fill="#0E4B43" opacity="0.6" />
+      <circle cx="369" cy="708" r="6" fill="#0E4B43" opacity="0.6" />
+      <circle cx="264" cy="603" r="6" fill="#0E4B43" opacity="0.65" />
+      <circle cx="264" cy="317" r="6" fill="#0E4B43" opacity="0.8" />
+      <circle cx="369" cy="212" r="6" fill="#0E4B43" opacity="0.8" />
+    </g>
+
+    <!-- 4. Confident Clock Hands (10:10 Horological Stance) -->
+    <g id="clockHands" filter="url(#handShadow)">
+      <!-- Hour Hand pointing towards 10:08 (Angle: -56 deg from 12:00) -->
+      <!-- Length: 175px, Tip at (367, 342) in clear water above head -->
+      <g transform="translate(512, 445) rotate(-56)">
+        <!-- Hand Outer Body -->
+        <path d="M -11 0 L -8 -162 C -8 -170 8 -170 8 -162 L 11 0 C 11 8 -11 8 -11 0 Z"
+              fill="url(#handBodyGrad)"
+              stroke="#082A25"
+              stroke-width="1.5" />
+        <!-- Hand Inlaid Luminous Bar -->
+        <rect x="-3.5" y="-150" width="7" height="120" rx="3.5" fill="url(#handInlayGrad)" />
+      </g>
+
+      <!-- Minute Hand pointing towards 1:44 (Angle: +52 deg from 12:00) -->
+      <!-- Length: 235px, Tip at (697, 295) in clear water above tail -->
+      <g transform="translate(512, 445) rotate(52)">
+        <!-- Hand Outer Body -->
+        <path d="M -9 0 L -6 -224 C -6 -232 6 -232 6 -224 L 9 0 C 9 8 -9 8 -9 0 Z"
+              fill="url(#handBodyGrad)"
+              stroke="#082A25"
+              stroke-width="1.5" />
+        <!-- Hand Inlaid Luminous Bar -->
+        <rect x="-3" y="-212" width="6" height="175" rx="3" fill="url(#handInlayGrad)" />
+      </g>
+
+      <!-- Central Arbor Mechanism & Jewel -->
+      <circle cx="512" cy="445" r="22" fill="#0E4B43" stroke="#FFFFFF" stroke-opacity="0.8" stroke-width="2" />
+      <circle cx="512" cy="445" r="14" fill="#082A25" />
+      <circle cx="512" cy="445" r="8" fill="url(#arborJewelGrad)" />
+      <circle cx="509" cy="442" r="2.5" fill="#FFFFFF" opacity="0.9" />
+    </g>
+
+    <!-- 5. The Hero Companion Fish with Soft Contact Depth -->
+    <!-- Position preserved with organic presence; soft depth casts onto dial plate -->
+    <g id="companionFish" filter="url(#fishContactShadow)">
+      <!-- Tail Fin (Caudal) -->
+      <path d="M 590 516 C 660 415, 788 358, 846 401 C 867 430, 802 502, 853 574 C 875 610, 831 675, 731 631 C 660 602, 616 559, 590 516 Z"
+            fill="url(#fishTailGrad)"
+            stroke="#EA580C"
+            stroke-width="8"
+            stroke-linejoin="round" />
+
+      <!-- Dorsal Fin (Top) -->
+      <path d="M 360 380 C 418 315, 518 322, 560 380 C 502 387, 430 394, 360 380 Z"
+            fill="url(#fishDorsalGrad)"
+            stroke="#EA580C"
+            stroke-width="8" />
+
+      <!-- Pelvic Fin (Bottom) -->
+      <path d="M 400 645 C 430 710, 510 718, 530 667 C 494 646, 444 639, 400 645 Z"
+            fill="url(#fishPelvicGrad)"
+            stroke="#EA580C"
+            stroke-width="8" />
+
+      <!-- Main Torso Body Silhouette -->
+      <path d="M 210 510 C 210 405, 350 360, 520 382 C 625 395, 646 500, 632 550 C 604 628, 478 664, 352 650 C 246 643, 210 580, 210 510 Z"
+            fill="url(#fishBodyGrad)"
+            stroke="#9A3412"
+            stroke-width="11" />
+
+      <!-- Soft Warm Belly Curve -->
+      <path d="M 252 560 C 280 625, 410 654, 540 618 C 482 582, 338 553, 252 560 Z"
+            fill="url(#fishBellyGrad)" />
+
+      <!-- Upper Back Specular Highlight Line -->
+      <path d="M 280 440 C 350 400, 450 390, 530 410"
+            stroke="#FFFFFF"
+            stroke-width="7"
+            stroke-linecap="round"
+            opacity="0.35" />
+
+      <!-- Pectoral Fin (Front Arm) -->
+      <path d="M 345 540 C 322 598, 365 670, 437 677 C 460 670, 466 634, 437 598 C 415 570, 380 548, 345 540 Z"
+            fill="url(#fishPectoralGrad)"
+            stroke="#EA580C"
+            stroke-width="9"
+            stroke-linejoin="round" />
+
+      <!-- Expressive Big Inquisitive Eye -->
+      <ellipse cx="308" cy="464" rx="56" ry="60" fill="#FFFFFF" stroke="#9A3412" stroke-width="10" />
+      <circle cx="302" cy="468" r="36" fill="#18181B" />
+      <!-- Crisp Specular Highlight Dots -->
+      <circle cx="288" cy="452" r="14.5" fill="#FFFFFF" />
+      <circle cx="319" cy="484" r="7.5" fill="#FFFFFF" />
+
+      <!-- Soft Friendly Cheek Blush -->
+      <ellipse cx="328" cy="530" rx="30" ry="16" fill="#FB7185" opacity="0.45" />
+
+      <!-- Happy Mouth Curve -->
+      <path d="M 210 516 Q 238 530, 218 544"
+            stroke="#9A3412"
+            stroke-width="10"
+            stroke-linecap="round"
+            fill="none" />
+    </g>
+
+    <!-- 6. Rising Buoyant Aquarium Bubbles -->
+    <g id="aquariumBubbles">
+      <!-- Bubble 1 -->
+      <circle cx="196" cy="285" r="30" fill="url(#bubbleGrad)" stroke="#2DD4BF" stroke-width="3" />
+      <circle cx="185" cy="274" r="8.5" fill="#FFFFFF" />
+      <circle cx="206" cy="296" r="3.8" fill="#FFFFFF" opacity="0.8" />
+
+      <!-- Bubble 2 -->
+      <circle cx="260" cy="195" r="19" fill="url(#bubbleGrad)" stroke="#2DD4BF" stroke-width="2" />
+      <circle cx="254" cy="189" r="5.5" fill="#FFFFFF" />
+
+      <!-- Bubble 3 -->
+      <circle cx="315" cy="155" r="11" fill="url(#bubbleGrad)" stroke="#2DD4BF" stroke-width="1.5" />
+      <circle cx="311" cy="151" r="3" fill="#FFFFFF" />
+    </g>
+
+    <!-- 7. Squircle Native Inner Bezel & Highlight Rim -->
+    <path d="M 100, 324 C 100, 201 195, 100 324, 100 L 700, 100 C 829, 100 924, 201 924, 324 L 924, 700 C 924, 829 829, 924 700, 924 L 324, 924 C 195, 924 100, 829 100, 700 Z"
+          fill="none"
+          stroke="url(#innerBezelGrad)"
+          stroke-width="2.5" />
+  </g>
+</svg>

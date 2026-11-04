@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>Passive Use Validation</title>
+<style>
+body { font: 18px system-ui; margin: 24px; background: #f4f6f7; color: #17222b; }
+video { display: block; width: 640px; height: 360px; background: black; }
+button { font: inherit; margin: 12px 8px 0 0; padding: 10px 16px; }
+output { display: block; white-space: pre-wrap; margin-top: 16px; }
+</style>
+<h1>Passive Use Validation</h1>
+<p>Local synthetic video. No browser settings or extensions required.</p>
+<video id="player" src="/media.mp4" controls muted loop playsinline></video>
+<button id="play">Play</button>
+<button id="pause">Pause</button>
+<button id="mute">Mute</button>
+<button id="unmute">Unmute</button>
+<button id="fullscreen">Fullscreen</button>
+<button id="large">Large video</button>
+<button id="small">Small video</button>
+<output id="state"></output>
+<script>
+const player = document.querySelector('#player');
+document.querySelector('#play').onclick = () => player.play();
+document.querySelector('#pause').onclick = () => player.pause();
+document.querySelector('#mute').onclick = () => { player.muted = true; };
+document.querySelector('#unmute').onclick = () => { player.muted = false; };
+document.querySelector('#fullscreen').onclick = () => player.requestFullscreen
+  ? player.requestFullscreen() : player.webkitEnterFullscreen();
+document.querySelector('#large').onclick = () => { player.style.width = '85vw'; player.style.height = '65vh'; };
+document.querySelector('#small').onclick = () => { player.style.width = '640px'; player.style.height = '360px'; };
+setInterval(() => {
+  document.querySelector('#state').textContent = JSON.stringify({
+    paused: player.paused, muted: player.muted, ended: player.ended,
+    readyState: player.readyState, currentTime: Number(player.currentTime.toFixed(1)),
+    visibility: document.visibilityState, fullscreen: Boolean(document.fullscreenElement),
+    videoWidth: Math.round(player.getBoundingClientRect().width),
+    videoHeight: Math.round(player.getBoundingClientRect().height),
+    viewportWidth: innerWidth, viewportHeight: innerHeight
+  });
+}, 500);
+</script>
+</html>
